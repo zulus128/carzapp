@@ -1,0 +1,32 @@
+//
+//  Colors.swift
+//  PushStart
+//
+//  Created by вадим on 09.12.14.
+//  Copyright (c) 2014 vkassin. All rights reserved.
+//
+
+import UIKit
+
+extension UIColor {
+    
+    convenience init(red: Int, green: Int, blue: Int) {
+        assert(red >= 0 && red <= 255, "Invalid red component")
+        assert(green >= 0 && green <= 255, "Invalid green component")
+        assert(blue >= 0 && blue <= 255, "Invalid blue component")
+        
+        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+    }
+    
+    convenience init(netHex:Int) {
+        self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
+    }
+}
+
+let COLOR_MENU_TITLE = UIColor(netHex:0x434144)
+let COLOR_MENU_BACKGROUND = UIColor(netHex:0x000002)
+let COLOR_MENU_CELL_SELECTED = UIColor(netHex:0x000002)
+let COLOR_MENU_CELL_BACKGROUND = UIColor(netHex:0x333335)
+let COLOR_MENU_SEPARATOR = UIColor(netHex:0x403e41)
+let COLOR_MENU_GRAYTEXT = UIColor(netHex:0x919192)
+let COLOR_MENU_WHITETEXT = UIColor(netHex:0xFFFFFF)
