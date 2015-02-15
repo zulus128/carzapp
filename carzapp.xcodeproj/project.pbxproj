@@ -26,6 +26,9 @@
 		DD5CB4751A87266B00BBC7DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CB4721A87266B00BBC7DA /* Constants.swift */; };
 		DD5CB4781A8726A500BBC7DA /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CB4761A8726A500BBC7DA /* Common.swift */; };
 		DD5CB4791A8726A500BBC7DA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CB4771A8726A500BBC7DA /* Network.swift */; };
+		DD9430B61A906FED007A304C /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9430B51A906FED007A304C /* LoginTableViewCell.swift */; };
+		DD9430B81A907134007A304C /* LoginDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9430B71A907134007A304C /* LoginDataSource.swift */; };
+		DDA0EB191A908BAC000CEF76 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0EB181A908BAC000CEF76 /* TriangleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		DD5CB4721A87266B00BBC7DA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DD5CB4761A8726A500BBC7DA /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		DD5CB4771A8726A500BBC7DA /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		DD9430B51A906FED007A304C /* LoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
+		DD9430B71A907134007A304C /* LoginDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDataSource.swift; sourceTree = "<group>"; };
+		DDA0EB181A908BAC000CEF76 /* TriangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +167,10 @@
 		DD5CB4641A87246400BBC7DA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DD9430B51A906FED007A304C /* LoginTableViewCell.swift */,
 				DD5CB4471A8722EE00BBC7DA /* Main.storyboard */,
 				DD5CB46E1A87263400BBC7DA /* MenuTableViewCell.swift */,
+				DDA0EB181A908BAC000CEF76 /* TriangleView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -195,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				DD5CB46C1A87260000BBC7DA /* MenuDataSource.swift */,
+				DD9430B71A907134007A304C /* LoginDataSource.swift */,
 			);
 			name = DS;
 			sourceTree = "<group>";
@@ -304,7 +313,9 @@
 				DD5CB4731A87266B00BBC7DA /* Colors.swift in Sources */,
 				DD5CB4791A8726A500BBC7DA /* Network.swift in Sources */,
 				DD549BFA1A87338200EA56D8 /* LoginController.swift in Sources */,
+				DD9430B81A907134007A304C /* LoginDataSource.swift in Sources */,
 				DD5CB4461A8722EE00BBC7DA /* ViewController.swift in Sources */,
+				DDA0EB191A908BAC000CEF76 /* TriangleView.swift in Sources */,
 				DD5CB46F1A87263400BBC7DA /* MenuTableViewCell.swift in Sources */,
 				DD5CB4781A8726A500BBC7DA /* Common.swift in Sources */,
 				DD5CB4411A8722EE00BBC7DA /* AppDelegate.swift in Sources */,
@@ -314,6 +325,7 @@
 				DD5CB46A1A8725CA00BBC7DA /* CommonRightController.swift in Sources */,
 				DD5CB4441A8722EE00BBC7DA /* carzapp.xcdatamodeld in Sources */,
 				DD549BFC1A8733A600EA56D8 /* CarsForSaleController.swift in Sources */,
+				DD9430B61A906FED007A304C /* LoginTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

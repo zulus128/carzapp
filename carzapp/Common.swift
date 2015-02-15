@@ -16,6 +16,9 @@ typealias JSONDictionary = Dictionary<String, JSON>
 //typealias JSONDictionary = Dictionary<String, String>
 typealias JSONArray = Array<JSON>
 
+let menuIcon = ""
+var signin:Bool = false
+
 class Common {
 
     var network: Network?

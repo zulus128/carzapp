@@ -8,15 +8,115 @@
 
 import UIKit
 
-class LoginController: CommonRightController {
+class LoginController: CommonRightController, UITableViewDelegate {
    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var signButton: UIButton!
     @IBOutlet weak var joinButton: UIButton!
     
-    override func viewDidLoad() {
+    @IBOutlet weak var triangle1: TriangleView!
+    @IBOutlet weak var triangle2: TriangleView!
+    let dataSource = LoginDataSource()
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
 //        signButton.backgroundColor = UIColor.redColor()
 //        joinButton.backgroundColor = UIColor.greenColor()
+
+        menuButton.titleLabel?.font = UIFont (name: "FontAwesome", size: 19)
+        menuButton.setTitle(menuIcon, forState: UIControlState.Normal)
+        tableView.delegate = self
+        tableView.dataSource = dataSource
+        
+        var tblView =  UIView(frame: CGRectZero)
+        tableView.tableFooterView = tblView
+        tableView.tableFooterView?.hidden = true
+
+        signButton.layer.borderWidth = 1
+        signButton.layer.borderColor = COLOR_LOGIN_BUTTONS.CGColor
+        joinButton.layer.borderWidth = 1
+        joinButton.layer.borderColor = COLOR_LOGIN_BUTTONS.CGColor
+        
+        self.join(self.joinButton)
+    }
+    
+
+    @IBAction func sign(sender: AnyObject)
+    {
+        signButton.backgroundColor = COLOR_LOGIN_BUTTONS
+        signButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        joinButton.backgroundColor = UIColor.whiteColor()
+        joinButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        signin = true
+        tableView.reloadData()
+        triangle1.hidden = true
+        triangle2.hidden = false
+    }
+    
+    @IBAction func join(sender: AnyObject)
+    {
+        joinButton.backgroundColor = COLOR_LOGIN_BUTTONS
+        joinButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        signButton.backgroundColor = UIColor.whiteColor()
+        signButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        signin = false
+        tableView.reloadData()
+        triangle2.hidden = true
+        triangle1.hidden = false
+    }
+
+    @IBAction func done(sender: AnyObject)
+    {
+        var cell:LoginTableViewCell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as LoginTableViewCell
+        let text1 = cell.textField.text
+        cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0)) as LoginTableViewCell
+        let text2 = cell.textField.text
+        if signin {
+            
+        }
+        else {
+            cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 2, inSection: 0)) as LoginTableViewCell
+            let text3 = cell.textField.text
+            cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 3, inSection: 0)) as LoginTableViewCell
+            let text4 = cell.textField.text
+            
+            var dict: JSONDictionary = JSONDictionary()
+            dict["phone"] = text1
+            dict["company_name"] = text1
+            dict["company_phone"] = text2
+            dict["email"] = text3
+            dict["password"] = text4
+            dict["password_confirmation"] = text4
+            Common.sharedInstance.network?.registerUser(dict, contr:self)
+        }
+    }
+
+    //UITableViewDelegate
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
+//        println("didSelectRowAtIndexPath \(indexPath.row)")
+        
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return LOGIN_CELL_HEIGHT
+    }
+    
+    //
+    override func isStatusDialog() -> Bool {
+        
+        return true
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent)
+    {
+//        println("touch")
+        self.view.endEditing(true)
     }
 }

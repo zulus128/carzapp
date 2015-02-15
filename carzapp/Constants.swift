@@ -20,16 +20,7 @@ func delay(delay:Double, closure:()->()) {
 let anim_delay = 0.2
 let deltaX : CGFloat = 50
 
-let USERS_CELL_HEIGHT = CGFloat(58.0)
-let GROUPS_CELL_HEIGHT = CGFloat(45.0)
-let PAYMENTS_CELL_HEIGHT = CGFloat(45.0)
-let CHOOSE_CELL_HEIGHT = CGFloat(45.0)
-
-let balObjects = ["5.00",
-    "10.00",
-    "20.00",
-    "30.00",
-    "40.00",
-    "50.00",
-    "100.00"
-]
+let LOGIN_CELL_HEIGHT = CGFloat(45.0)
+//let GROUPS_CELL_HEIGHT = CGFloat(45.0)
+//let PAYMENTS_CELL_HEIGHT = CGFloat(45.0)
+//let CHOOSE_CELL_HEIGHT = CGFloat(45.0)

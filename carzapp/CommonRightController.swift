@@ -38,10 +38,10 @@ class CommonRightController: UIViewController {
         let fr = self.view.frame
 
 //        NSLog("t = \(Common.sharedInstance.currentTag)")
-        if(Common.sharedInstance.currentTag == self.view.tag) {
-            
-            return
-        }
+//        if(Common.sharedInstance.currentTag == self.view.tag) {
+//            
+//            return
+//        }
         
         if !Common.sharedInstance.register {
            
@@ -120,37 +120,16 @@ class CommonRightController: UIViewController {
     func serverAction(json:NSDictionary) -> Bool {
         
         var b = false;
-        let status = json["result"] as String
+        let status_err = json["error"] as String?
 
         var msg:String
         var msg1:String = ""
-        switch status {
-            
-        case "errors":
-            msg = NSLocalizedString("ERROR_HEAD_DIALOG", comment: "")
-            var d = json["error_data"] as NSDictionary?
-            if(d != nil) {
-                for (k, v) in d! {
-                    
-                    msg1 = k as String
-                    msg1 += ": "
-                    let arr:JSONArray? = v as? JSONArray
-                    if(arr != nil) {
-                        for m in arr! {
-                            
-                            let mm = m as String
-                            msg1 += (mm + "\n")
-                        }
-                    }
-                    else {
-                        
-                        let d1 = d!
-                        msg1 = d1["message"] as String
+        
+        if(status_err != nil) {
 
-                    }
-                    break
-                }
-            }
+            msg = "Errors:"
+            msg1 = status_err!
+            
             if isStatusDialog() {
                 
                 dispatch_async(dispatch_get_main_queue(), {
@@ -163,37 +142,37 @@ class CommonRightController: UIViewController {
                 })
             }
             
-            
-        case "success":
-            msg = NSLocalizedString("SUCCESS_HEAD_DIALOG", comment: "")
-            msg1 = getSuccessStatus();// NSLocalizedString("REGISTRATION_COMPLETED", comment: "")
-            if isLogin() {
-
-                let d = json["data"] as NSDictionary
-                
-                Common.sharedInstance.network?.token = d["access_token"] as? String
-                
-                var userDefaults = NSUserDefaults.standardUserDefaults()
-                userDefaults.setValue(Common.sharedInstance.network?.token, forKey: "accesstoken")
-                userDefaults.synchronize()
-                
-                println("Access token \(Common.sharedInstance.network?.token) stored.")
-
-                Common.sharedInstance.usersContr?.refresh()
-            }
-            
-            dispatch_async(dispatch_get_main_queue(), {
-                
-                self.onSuccess()
-            })
-            
-            b = true
-            
-        default:
-            msg = "nan"
-            msg1 = "nan"
         }
-        
+//        case "success":
+//            msg = NSLocalizedString("SUCCESS_HEAD_DIALOG", comment: "")
+//            msg1 = getSuccessStatus();// NSLocalizedString("REGISTRATION_COMPLETED", comment: "")
+//            if isLogin() {
+//
+//                let d = json["data"] as NSDictionary
+//                
+//                Common.sharedInstance.network?.token = d["access_token"] as? String
+//                
+//                var userDefaults = NSUserDefaults.standardUserDefaults()
+//                userDefaults.setValue(Common.sharedInstance.network?.token, forKey: "accesstoken")
+//                userDefaults.synchronize()
+//                
+//                println("Access token \(Common.sharedInstance.network?.token) stored.")
+//
+//                Common.sharedInstance.usersContr?.refresh()
+//            }
+//            
+//            dispatch_async(dispatch_get_main_queue(), {
+//                
+//                self.onSuccess()
+//            })
+//            
+//            b = true
+//            
+//        default:
+//            msg = "nan"
+//            msg1 = "nan"
+//        }
+//        
 
         
         return b
