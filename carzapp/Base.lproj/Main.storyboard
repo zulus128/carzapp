@@ -137,6 +137,9 @@
                                                     <rect key="frame" x="65" y="8" width="247" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="Vwr-1H-Fxo" id="ltO-Am-9Nq"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>

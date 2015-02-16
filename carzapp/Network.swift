@@ -10,6 +10,7 @@ import UIKit
 
 let URL = "http://198.38.86.211:3000/api/v1/"
 let STR_USER_CREATE = "users/register.json"
+let STR_USER_LOGIN = "users/authorize.json"
 
 
 
@@ -83,11 +84,11 @@ class Network: NSObject {
 
         let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
                 
-                if debug {
+            if debug {
                     
-                    let resstr = NSString(data: data, encoding: NSUTF8StringEncoding)
-                    println("POST task completed with data: \(resstr)")
-                }
+                let resstr = NSString(data: data, encoding: NSUTF8StringEncoding)
+                println("POST task completed with data: \(resstr)")
+            }
                 
                 if(error != nil) {
                     // If there is an error in the web request, print it to the console
@@ -102,10 +103,10 @@ class Network: NSObject {
                     println("JSON Error \(err!.localizedDescription)")
                 }
                 
-//                if debug {
-//
-//                    println("result: \(jsonResult)")
-//                }
+                if debug {
+
+                    println("result: \(jsonResult)")
+                }
             
                 if(jsonResult != nil) {
                     
@@ -170,27 +171,12 @@ class Network: NSObject {
     
     func registerUser(dict: JSONDictionary, contr:CommonRightController) {
         
-//        var jsonCreationError:NSError?
+        networkRequestPost(STR_USER_CREATE, params:dict, contr:contr)
+    }
+    
+    func loginUser(dict: JSONDictionary, contr:CommonRightController) {
         
-//        let json:NSData? = NSJSONSerialization.dataWithJSONObject(dict, options: NSJSONWritingOptions.PrettyPrinted, error: &jsonCreationError)
-//        
-//        if jsonCreationError != nil {
-//            
-//            println("registerUser jsonCreation Errors: \(jsonCreationError)")
-//        }
-//        else {
-        
-            // everything is fine and we have our json stored as an NSData object
-//            var datastring = NSString(data: json!, encoding: NSUTF8StringEncoding)
-//            let s = STR_USER_CREATE + datastring!
-            
-            //            println(s)
-            
-//            networkRequestPost(STR_USER_CREATE, params:datastring!, contr:contr)
-            networkRequestPost(STR_USER_CREATE, params:dict, contr:contr)
-            
-//        }
-        
+        networkRequestPost(STR_USER_LOGIN, params:dict, contr:contr)
     }
     
     func resendCode(dict: JSONDictionary, contr:CommonRightController) {

@@ -121,60 +121,50 @@ class CommonRightController: UIViewController {
         
         var b = false;
         let status_err = json["error"] as String?
+        let access_token = json["access_token"] as String?
 
-        var msg:String
+        var msg:String = ""
         var msg1:String = ""
         
         if(status_err != nil) {
-
+            
             msg = "Errors:"
             msg1 = status_err!
             
-            if isStatusDialog() {
-                
-                dispatch_async(dispatch_get_main_queue(), {
-                    
-                    let alert = UIAlertView()
-                    alert.title = msg
-                    alert.message = msg1
-                    alert.addButtonWithTitle("Ok")
-                    alert.show()
-                })
-            }
             
         }
-//        case "success":
-//            msg = NSLocalizedString("SUCCESS_HEAD_DIALOG", comment: "")
-//            msg1 = getSuccessStatus();// NSLocalizedString("REGISTRATION_COMPLETED", comment: "")
-//            if isLogin() {
-//
-//                let d = json["data"] as NSDictionary
-//                
-//                Common.sharedInstance.network?.token = d["access_token"] as? String
-//                
-//                var userDefaults = NSUserDefaults.standardUserDefaults()
-//                userDefaults.setValue(Common.sharedInstance.network?.token, forKey: "accesstoken")
-//                userDefaults.synchronize()
-//                
-//                println("Access token \(Common.sharedInstance.network?.token) stored.")
-//
-//                Common.sharedInstance.usersContr?.refresh()
-//            }
-//            
-//            dispatch_async(dispatch_get_main_queue(), {
-//                
-//                self.onSuccess()
-//            })
-//            
-//            b = true
-//            
-//        default:
-//            msg = "nan"
-//            msg1 = "nan"
-//        }
-//        
-
         
+        if(access_token != nil) {
+            
+            msg = "Success!"
+            msg1 = "Registration done"
+            
+            Common.sharedInstance.network?.token = access_token  
+            
+            var userDefaults = NSUserDefaults.standardUserDefaults()
+            userDefaults.setValue(Common.sharedInstance.network?.token, forKey: "accesstoken")
+            userDefaults.synchronize()
+            
+            println("Access token \(Common.sharedInstance.network?.token) stored.")
+
+            b = true
+            
+            onSuccess()
+        }
+        
+        
+        if isStatusDialog() {
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                
+                let alert = UIAlertView()
+                alert.title = msg
+                alert.message = msg1
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+            })
+        }
+
         return b
     }
     

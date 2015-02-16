@@ -43,6 +43,42 @@ class LoginController: CommonRightController, UITableViewDelegate {
         self.join(self.joinButton)
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func keyboardDidShow(notification: NSNotification){
+        
+        let f = self.view.frame
+        UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: {
+            
+            self.view.frame = CGRectMake(0, -130, f.size.width, f.size.height)
+            
+            }, completion: { finished in
+        })
+        
+    }
+    
+    func keyboardDidHide(notification: NSNotification){
+        
+        let f = self.view.frame
+        UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: {
+            
+            self.view.frame = CGRectMake(0, 0, f.size.width, f.size.height)
+            
+            }, completion: { finished in
+        })
+        
+    }
 
     @IBAction func sign(sender: AnyObject)
     {
@@ -76,20 +112,35 @@ class LoginController: CommonRightController, UITableViewDelegate {
         let text2 = cell.textField.text
         if signin {
             
+            var dict: JSONDictionary = JSONDictionary()
+            dict["email"] = text1
+            dict["password"] = text2
+            Common.sharedInstance.network?.loginUser(dict, contr:self)
+
         }
         else {
             cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 2, inSection: 0)) as LoginTableViewCell
             let text3 = cell.textField.text
             cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 3, inSection: 0)) as LoginTableViewCell
             let text4 = cell.textField.text
+            cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 4, inSection: 0)) as LoginTableViewCell
+            let text5 = cell.textField.text
+            cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 5, inSection: 0)) as LoginTableViewCell
+            let text6 = cell.textField.text
+            cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 6, inSection: 0)) as LoginTableViewCell
+            let text7 = cell.textField.text
+            cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 7, inSection: 0)) as LoginTableViewCell
+            let text8 = cell.textField.text
             
             var dict: JSONDictionary = JSONDictionary()
             dict["phone"] = text1
-            dict["company_name"] = text1
-            dict["company_phone"] = text2
-            dict["email"] = text3
-            dict["password"] = text4
-            dict["password_confirmation"] = text4
+            dict["company_name"] = text2
+            dict["company_phone"] = text3
+            dict["email"] = text4
+            dict["dealer_number"] = text5
+            dict["dealer_solution_number"] = text6
+            dict["password"] = text7
+            dict["password_confirmation"] = text8
             Common.sharedInstance.network?.registerUser(dict, contr:self)
         }
     }
@@ -112,6 +163,11 @@ class LoginController: CommonRightController, UITableViewDelegate {
     override func isStatusDialog() -> Bool {
         
         return true
+    }
+    
+    override func onSuccess() {
+        
+//        navigationController?.popToRootViewControllerAnimated(true)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent)
