@@ -23,30 +23,18 @@ var signin:Bool = false
 class Common {
 
     var network: Network?
-    var usersContr:CommonRightController?
-    var groupsContr:CommonRightController?
+    var carsForSaleContr:CommonRightController?
     var menuContr:MenuController?
     var push_token:String?
     var phone:String?
     var currentTag:Int = TAG_LOGIN_VIEW
     var register:Bool = true
-    var curUserName:String?
-    var curUserPhone:String?
-    var curUserDomain:String?
-    var curGroupName:String?
-    var curBalance:Double
-//    var newUserContr:NewUserController?
-//    var newGroupContr:NewGroupController?
-//    var newPostContr:NewPostController?
-    var lastDomain:String?
  
     init() {
         
 //        println("Common init")
        
         network  = Network()
-
-        curBalance = 0
     }
     
     class var sharedInstance : Common {

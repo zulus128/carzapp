@@ -11,6 +11,8 @@ import UIKit
 
 class CommonRightController: UIViewController {
     
+    @IBOutlet weak var menuButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -99,7 +101,7 @@ class CommonRightController: UIViewController {
         
     }
    
-    func onSuccess() {
+    func onSuccess(result:NSDictionary) {
         
     }
     
@@ -108,11 +110,16 @@ class CommonRightController: UIViewController {
         return false
     }
 
-    func isStatusDialog() -> Bool {
-    
+    func isShowErrorDialog() -> Bool {
+        
         return false
     }
-
+    
+    func isShowSuccessDialog() -> Bool {
+        
+        return false
+    }
+    
     func refreshTablesWithoutNetworkCalls() {
         
     }
@@ -123,48 +130,69 @@ class CommonRightController: UIViewController {
         let status_err = json["error"] as String?
         let access_token = json["access_token"] as String?
 
-        var msg:String = ""
-        var msg1:String = ""
-        
         if(status_err != nil) {
             
-            msg = "Errors:"
-            msg1 = status_err!
-            
-            
+            if isShowErrorDialog() {
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    
+                    let alert = UIAlertView()
+                    alert.title = "Errors:"
+                    alert.message = status_err!
+                    alert.addButtonWithTitle("Ok")
+                    alert.show()
+                })
+            }
         }
         
         if(access_token != nil) {
             
-            msg = "Success!"
-            msg1 = "Registration done"
-            
-            Common.sharedInstance.network?.token = access_token  
+            Common.sharedInstance.network?.token = access_token
             
             var userDefaults = NSUserDefaults.standardUserDefaults()
             userDefaults.setValue(Common.sharedInstance.network?.token, forKey: "accesstoken")
             userDefaults.synchronize()
             
-            println("Access token \(Common.sharedInstance.network?.token) stored.")
-
+            println("Access token \(Common.sharedInstance.network?.token!) stored.")
+            
             b = true
             
-            onSuccess()
-        }
-        
-        
-        if isStatusDialog() {
+            onSuccess(json)
             
-            dispatch_async(dispatch_get_main_queue(), {
+            if isShowSuccessDialog() {
                 
-                let alert = UIAlertView()
-                alert.title = msg
-                alert.message = msg1
-                alert.addButtonWithTitle("Ok")
-                alert.show()
-            })
+                dispatch_async(dispatch_get_main_queue(), {
+                    
+                    let alert = UIAlertView()
+                    alert.title = "Success!"
+                    alert.message = "Done"
+                    alert.addButtonWithTitle("Ok")
+                    alert.show()
+                })
+            }
+            
         }
-
+        
+        if(json["cars"] != nil) {
+            
+            b = true
+            
+            onSuccess(json)
+            
+            if isShowSuccessDialog() {
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    
+                    let alert = UIAlertView()
+                    alert.title = "Success!"
+                    alert.message = "Done"
+                    alert.addButtonWithTitle("Ok")
+                    alert.show()
+                })
+            }
+            
+        }
+        
         return b
     }
     

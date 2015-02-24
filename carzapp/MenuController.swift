@@ -32,7 +32,6 @@ class MenuController: UIViewController, UITableViewDelegate {
 
         self.view.backgroundColor = COLOR_MENU_BACKGROUND
         self.topView.backgroundColor = COLOR_MENU_BACKGROUND
-//        self.balanceLabel.textColor = COLOR_MENU_BALANCE
         self.tableView.separatorColor = COLOR_MENU_SEPARATOR
         
         Common.sharedInstance.menuContr = self
@@ -55,7 +54,7 @@ class MenuController: UIViewController, UITableViewDelegate {
         self.addChildViewController(viewController)
         self.view.addSubview(viewController.view)
         viewController.view.hidden = true
-//        Common.sharedInstance.groupsContr = viewController
+        Common.sharedInstance.carsForSaleContr = viewController
         
         
         // Add swipeGestures
@@ -198,7 +197,7 @@ class MenuController: UIViewController, UITableViewDelegate {
         var t :Int
         switch indexPath.row {
             
-        case 0:
+        case 1:
             t = TAG_CARSFORSALE_VIEW
         default:
             t = TAG_LOGIN_VIEW

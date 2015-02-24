@@ -29,6 +29,7 @@
 		DD9430B61A906FED007A304C /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9430B51A906FED007A304C /* LoginTableViewCell.swift */; };
 		DD9430B81A907134007A304C /* LoginDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9430B71A907134007A304C /* LoginDataSource.swift */; };
 		DDA0EB191A908BAC000CEF76 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0EB181A908BAC000CEF76 /* TriangleView.swift */; };
+		DDCF56111A9C1E6300B0CE5A /* CFSDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF56101A9C1E6300B0CE5A /* CFSDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		DD9430B51A906FED007A304C /* LoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
 		DD9430B71A907134007A304C /* LoginDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDataSource.swift; sourceTree = "<group>"; };
 		DDA0EB181A908BAC000CEF76 /* TriangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
+		DDCF56101A9C1E6300B0CE5A /* CFSDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFSDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 			children = (
 				DD5CB46C1A87260000BBC7DA /* MenuDataSource.swift */,
 				DD9430B71A907134007A304C /* LoginDataSource.swift */,
+				DDCF56101A9C1E6300B0CE5A /* CFSDataSource.swift */,
 			);
 			name = DS;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				DD5CB4781A8726A500BBC7DA /* Common.swift in Sources */,
 				DD5CB4411A8722EE00BBC7DA /* AppDelegate.swift in Sources */,
 				DD5CB4751A87266B00BBC7DA /* Constants.swift in Sources */,
+				DDCF56111A9C1E6300B0CE5A /* CFSDataSource.swift in Sources */,
 				DD5CB4741A87266B00BBC7DA /* Tags.swift in Sources */,
 				DD5CB46D1A87260000BBC7DA /* MenuDataSource.swift in Sources */,
 				DD5CB46A1A8725CA00BBC7DA /* CommonRightController.swift in Sources */,

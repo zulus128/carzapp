@@ -11,7 +11,6 @@ import UIKit
 class LoginController: CommonRightController, UITableViewDelegate {
    
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var signButton: UIButton!
     @IBOutlet weak var joinButton: UIButton!
     
@@ -147,27 +146,24 @@ class LoginController: CommonRightController, UITableViewDelegate {
 
     //UITableViewDelegate
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
         
         
 //        println("didSelectRowAtIndexPath \(indexPath.row)")
         
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
         
         return LOGIN_CELL_HEIGHT
     }
     
     //
-    override func isStatusDialog() -> Bool {
-        
+    override func isShowErrorDialog() -> Bool
+    {
         return true
-    }
-    
-    override func onSuccess() {
-        
-//        navigationController?.popToRootViewControllerAnimated(true)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent)
