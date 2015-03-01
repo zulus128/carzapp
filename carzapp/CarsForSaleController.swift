@@ -16,6 +16,7 @@ class CarsForSaleController: CommonRightController, UITableViewDelegate {
     
     let dataSource = CFSDataSource()
 
+    @IBOutlet weak var spotlightView: UIView!
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -30,10 +31,20 @@ class CarsForSaleController: CommonRightController, UITableViewDelegate {
         menuButton.setTitle(menuIcon, forState: UIControlState.Normal)
 
         topGreyView.backgroundColor = COLOR_CARSFORSALE_TOP_BACKGROUND
+        topGreyView.layer.shadowColor = UIColor.blackColor().CGColor
+        topGreyView.layer.shadowOffset = CGSizeMake(1.0, 1.0)
+        topGreyView.layer.shadowRadius = 1.0;
+        topGreyView.layer.shadowOpacity = 0.2;
+
+        
+        
+        
         resultsLabel.textColor = COLOR_CARSFORSALE_TOP_TEXT
         
         tableView.dataSource = dataSource
         tableView.delegate = self
+        
+        refresh()
     }
 
     override func isShowErrorDialog() -> Bool
@@ -44,7 +55,8 @@ class CarsForSaleController: CommonRightController, UITableViewDelegate {
     override func onSuccess(result:NSDictionary)
     {
         
-        dataSource.carsArray = result["cars"] as? JSONArray
+        dataSource.carsArray = result["cars"] as JSONArray
+        resultsLabel.text = "\(dataSource.carsArray.count) results..."
         tableView.reloadData()
     }
     
@@ -52,8 +64,26 @@ class CarsForSaleController: CommonRightController, UITableViewDelegate {
     {
         
         if(Common.sharedInstance.network?.token != nil) {
-            
+        
             Common.sharedInstance.network?.getCarsForSale(self)
         }
     }
+    
+    //UITableViewDelegate
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        
+        
+        //        println("didSelectRowAtIndexPath \(indexPath.row)")
+        
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        
+        return CFS_CELL_HEIGHT
+    }
+    
+
 }

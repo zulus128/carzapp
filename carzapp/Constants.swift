@@ -21,6 +21,4 @@ let anim_delay = 0.2
 let deltaX : CGFloat = 50
 
 let LOGIN_CELL_HEIGHT = CGFloat(45.0)
-//let GROUPS_CELL_HEIGHT = CGFloat(45.0)
-//let PAYMENTS_CELL_HEIGHT = CGFloat(45.0)
-//let CHOOSE_CELL_HEIGHT = CGFloat(45.0)
+let CFS_CELL_HEIGHT = CGFloat(347.0)

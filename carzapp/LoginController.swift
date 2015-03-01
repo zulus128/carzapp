@@ -166,6 +166,11 @@ class LoginController: CommonRightController, UITableViewDelegate {
         return true
     }
     
+    override func isShowSuccessDialog() -> Bool
+    {
+        return true
+    }
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent)
     {
 //        println("touch")

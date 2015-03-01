@@ -12,7 +12,7 @@ let URL = "http://198.38.86.211:3000/api/v1/"
 let STR_USER_CREATE = "users/register.json"
 let STR_USER_LOGIN = "users/authorize.json"
 
-let STR_CARSFORASLE_LIST = "cars.json"
+let STR_CARSFORASLE_LIST = "cars?access_token="
 
 
 //let debug = false
@@ -152,25 +152,26 @@ class Network: NSObject {
     
     func getCarsForSale(contr:CommonRightController) {
         
-        var jsonCreationError:NSError?
-        var dict:JSONDictionary = JSONDictionary()
-//        dict["token"] = token! as JSON
-        let json:NSData? = NSJSONSerialization.dataWithJSONObject(dict, options: NSJSONWritingOptions.PrettyPrinted, error: &jsonCreationError)
+//        var jsonCreationError:NSError?
+//        var dict:JSONDictionary = JSONDictionary()
+//        dict["access_token"] = token! as JSON
+//        let json:NSData? = NSJSONSerialization.dataWithJSONObject(dict, options: NSJSONWritingOptions.PrettyPrinted, error: &jsonCreationError)
+//        
+//        if jsonCreationError != nil {
+//            
+//            println("getCarsForSale jsonCreation Errors: \(jsonCreationError)")
+//        }
+//        else {
+//            
+//            var datastring = NSString(data: json!, encoding: NSUTF8StringEncoding)
         
-        if jsonCreationError != nil {
-            
-            println("getCarsForSale jsonCreation Errors: \(jsonCreationError)")
-        }
-        else {
-            
-            var datastring = NSString(data: json!, encoding: NSUTF8StringEncoding)
-            let s = STR_CARSFORASLE_LIST //+ datastring!
-            
+        let s = STR_CARSFORASLE_LIST + token!
+        
             //            println(s)
             
             networkRequestGet(s, contr:contr)
             
-        }
+//        }
         
     }
     

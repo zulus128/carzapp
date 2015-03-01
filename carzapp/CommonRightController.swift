@@ -127,10 +127,10 @@ class CommonRightController: UIViewController {
     func serverAction(json:NSDictionary) -> Bool {
         
         var b = false;
-        let status_err = json["error"] as String?
-        let access_token = json["access_token"] as String?
+        let status = json["status"] as String?
+        let response = json["response"] as String?
 
-        if(status_err != nil) {
+        if(status == "error") {
             
             if isShowErrorDialog() {
                 
@@ -138,25 +138,30 @@ class CommonRightController: UIViewController {
                     
                     let alert = UIAlertView()
                     alert.title = "Errors:"
-                    alert.message = status_err!
+                    alert.message = response
                     alert.addButtonWithTitle("Ok")
                     alert.show()
                 })
             }
         }
         
-        if(access_token != nil) {
+        if(status == "success") {
+   
+            let access_token = json["access_token"] as String?
+           
+            if(access_token != nil) {
             
-            Common.sharedInstance.network?.token = access_token
-            
-            var userDefaults = NSUserDefaults.standardUserDefaults()
-            userDefaults.setValue(Common.sharedInstance.network?.token, forKey: "accesstoken")
-            userDefaults.synchronize()
-            
-            println("Access token \(Common.sharedInstance.network?.token!) stored.")
+                Common.sharedInstance.network?.token = access_token
+                
+                var userDefaults = NSUserDefaults.standardUserDefaults()
+                userDefaults.setValue(Common.sharedInstance.network?.token, forKey: "accesstoken")
+                userDefaults.synchronize()
+                
+                println("Access token \(Common.sharedInstance.network?.token!) stored.")
+            }
             
             b = true
-            
+                
             onSuccess(json)
             
             if isShowSuccessDialog() {
@@ -170,28 +175,27 @@ class CommonRightController: UIViewController {
                     alert.show()
                 })
             }
-            
         }
         
-        if(json["cars"] != nil) {
-            
-            b = true
-            
-            onSuccess(json)
-            
-            if isShowSuccessDialog() {
-                
-                dispatch_async(dispatch_get_main_queue(), {
-                    
-                    let alert = UIAlertView()
-                    alert.title = "Success!"
-                    alert.message = "Done"
-                    alert.addButtonWithTitle("Ok")
-                    alert.show()
-                })
-            }
-            
-        }
+//        if(json["cars"] != nil) {
+//            
+//            b = true
+//            
+//            onSuccess(json)
+//            
+//            if isShowSuccessDialog() {
+//                
+//                dispatch_async(dispatch_get_main_queue(), {
+//                    
+//                    let alert = UIAlertView()
+//                    alert.title = "Success!"
+//                    alert.message = "Done"
+//                    alert.addButtonWithTitle("Ok")
+//                    alert.show()
+//                })
+//            }
+//            
+//        }
         
         return b
     }
