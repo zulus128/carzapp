@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BF736219-807F-4533-BC01-92B7EFDC9A32</string>
+	<key>IDESourceControlProjectName</key>
+	<string>carzapp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F80C7780622FBB9AF1E0AA4549961E7CC30E4E9B</key>
+		<string>github.com:zulus128/carzapp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>carzapp.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F80C7780622FBB9AF1E0AA4549961E7CC30E4E9B</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:zulus128/carzapp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F80C7780622FBB9AF1E0AA4549961E7CC30E4E9B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F80C7780622FBB9AF1E0AA4549961E7CC30E4E9B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>carzapp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
