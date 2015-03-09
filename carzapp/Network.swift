@@ -13,6 +13,8 @@ let STR_USER_CREATE = "users/register.json"
 let STR_USER_LOGIN = "users/authorize.json"
 
 let STR_CARSFORASLE_LIST = "cars?access_token="
+let STR_CARSFORASLE_SEARCH_BY_KEYWORD = "cars/search?access_token="
+let STR_CARSFORASLE_SEARCH_BY_FIELDS = "cars/search_by_fields?access_token="
 
 
 //let debug = false
@@ -152,27 +154,25 @@ class Network: NSObject {
     
     func getCarsForSale(contr:CommonRightController) {
         
-//        var jsonCreationError:NSError?
-//        var dict:JSONDictionary = JSONDictionary()
-//        dict["access_token"] = token! as JSON
-//        let json:NSData? = NSJSONSerialization.dataWithJSONObject(dict, options: NSJSONWritingOptions.PrettyPrinted, error: &jsonCreationError)
-//        
-//        if jsonCreationError != nil {
-//            
-//            println("getCarsForSale jsonCreation Errors: \(jsonCreationError)")
-//        }
-//        else {
-//            
-//            var datastring = NSString(data: json!, encoding: NSUTF8StringEncoding)
-        
         let s = STR_CARSFORASLE_LIST + token!
+        networkRequestGet(s, contr:contr)
+    }
+    
+    func searchForKeyword(kw:String, contr:CommonRightController) {
         
-            //            println(s)
-            
-            networkRequestGet(s, contr:contr)
-            
-//        }
+        let s = STR_CARSFORASLE_SEARCH_BY_KEYWORD + token! + "&search=" + kw
+        networkRequestGet(s, contr:contr)
+    }
+    
+    func searchForFields(flds:NSDictionary, contr:CommonRightController) {
         
+        let keys = flds.allKeys
+        var s = STR_CARSFORASLE_SEARCH_BY_FIELDS + token! + "&search[q]="
+        for key in keys {
+            let skey = key as String
+            s = s + "&search[" + skey + "]=" + (flds[skey] as String)
+        }
+        networkRequestGet(s, contr:contr)
     }
     
 }

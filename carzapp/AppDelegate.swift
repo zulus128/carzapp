@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            }
 //        }
 
+    
+        Crashlytics.startWithAPIKey("61b97f836813051adca5ca79f27795ff58da96c5")
+        
         return true
     }
 

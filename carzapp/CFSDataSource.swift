@@ -51,6 +51,8 @@ class CFSDataSource: NSObject, UITableViewDataSource {
         cell.dealer.text = dl1
         
         cell.selectionStyle = UITableViewCellSelectionStyle.None
+        cell.contentView.backgroundColor = UIColor.clearColor()
+        cell.backgroundView?.backgroundColor = UIColor.clearColor()
 
         return cell
     }

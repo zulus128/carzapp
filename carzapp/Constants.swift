@@ -22,3 +22,5 @@ let deltaX : CGFloat = 50
 
 let LOGIN_CELL_HEIGHT = CGFloat(45.0)
 let CFS_CELL_HEIGHT = CGFloat(347.0)
+let CFS_SEARCH_CELL_HEIGHT = CGFloat(45.0)
+let CFS_SEARCH_CELL__DELIM_HEIGHT = CGFloat(21.0)

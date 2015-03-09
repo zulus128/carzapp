@@ -22,7 +22,8 @@ class CarsForSaleController: CommonRightController, UITableViewDelegate {
         super.viewDidLoad()
 
         self.view.backgroundColor = COLOR_CARSFORSALE_TABLE_BACKGROUND
-        
+        self.tableView.backgroundColor = UIColor.clearColor()
+
         var tblView =  UIView(frame: CGRectZero)
         tableView.tableFooterView = tblView
         tableView.tableFooterView?.hidden = true
@@ -36,37 +37,41 @@ class CarsForSaleController: CommonRightController, UITableViewDelegate {
         topGreyView.layer.shadowRadius = 1.0;
         topGreyView.layer.shadowOpacity = 0.2;
 
-        
-        
-        
         resultsLabel.textColor = COLOR_CARSFORSALE_TOP_TEXT
         
         tableView.dataSource = dataSource
         tableView.delegate = self
         
-        refresh()
+//        refresh()
     }
 
-    override func isShowErrorDialog() -> Bool
-    {
-        return true
-    }
-    
-    override func onSuccess(result:NSDictionary)
-    {
-        
-        dataSource.carsArray = result["cars"] as JSONArray
-        resultsLabel.text = "\(dataSource.carsArray.count) results..."
-        tableView.reloadData()
-    }
-    
+//    override func isShowErrorDialog() -> Bool
+//    {
+//        return true
+//    }
+//    
+//    override func onSuccess(result:NSDictionary)
+//    {
+//        
+//        dataSource.carsArray = result["cars"] as JSONArray
+//        resultsLabel.text = "\(dataSource.carsArray.count) results..."
+//        tableView.reloadData()
+//    }
+
     override func refresh()
     {
-        
-        if(Common.sharedInstance.network?.token != nil) {
-        
-            Common.sharedInstance.network?.getCarsForSale(self)
+        let cars = searchResult["cars"] as? JSONArray
+        if cars != nil {
+            dataSource.carsArray = cars!
+            resultsLabel.text = "\(dataSource.carsArray.count) results..."
+            tableView.reloadData()
         }
+
+//        if(Common.sharedInstance.network?.token != nil) {
+//        
+//            Common.sharedInstance.network?.getCarsForSale(self)
+//            
+//        }
     }
     
     //UITableViewDelegate

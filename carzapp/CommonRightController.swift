@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CommonRightController: UIViewController {
+class CommonRightController: UIViewController, UIAlertViewDelegate {
     
     @IBOutlet weak var menuButton: UIButton!
 
@@ -171,6 +171,7 @@ class CommonRightController: UIViewController {
                     let alert = UIAlertView()
                     alert.title = "Success!"
                     alert.message = "Done"
+                    alert.delegate = self
                     alert.addButtonWithTitle("Ok")
                     alert.show()
                 })
@@ -199,5 +200,8 @@ class CommonRightController: UIViewController {
         
         return b
     }
-    
+
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int)
+    {
+    }
 }

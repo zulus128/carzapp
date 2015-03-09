@@ -15,9 +15,6 @@ class MenuController: UIViewController, UITableViewDelegate {
         
     @IBOutlet weak var topView: UIView!
     
-//    @IBOutlet weak var balance: UILabel!
-//    @IBOutlet weak var balanceLabel: UILabel!
-
     @IBAction func signInClicked(sender: AnyObject) {
         
                hideAllExceptTag(TAG_LOGIN_VIEW)
@@ -42,12 +39,39 @@ class MenuController: UIViewController, UITableViewDelegate {
             Common.sharedInstance.currentTag = TAG_LOGIN_VIEW
         }
 
-        var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("login_contr") as CommonRightController
+        var viewController = self.storyboard?.instantiateViewControllerWithIdentifier("welcome_contr") as CommonRightController
+        viewController.view.tag = TAG_WELCOME_VIEW;
+        self.addChildViewController(viewController)
+        self.view.addSubview(viewController.view)
+        viewController.view.hidden = false
+        
+        viewController = self.storyboard?.instantiateViewControllerWithIdentifier("login_contr") as CommonRightController
         viewController.view.tag = TAG_LOGIN_VIEW;
         self.addChildViewController(viewController)
         self.view.addSubview(viewController.view)
-        viewController.view.hidden = needReg
-//        Common.sharedInstance.usersContr = viewController
+        viewController.view.hidden = true //needReg
+        //        Common.sharedInstance.usersContr = viewController
+        
+        viewController = self.storyboard?.instantiateViewControllerWithIdentifier("cfs_search_contr") as CommonRightController
+        viewController.view.tag = TAG_CARSFORSALE_SEARCH_VIEW
+        self.addChildViewController(viewController)
+        self.view.addSubview(viewController.view)
+        viewController.view.hidden = true
+        Common.sharedInstance.carsForSaleContr = viewController
+        
+        viewController = self.storyboard?.instantiateViewControllerWithIdentifier("sf_contr") as CommonRightController
+        viewController.view.tag = TAG_SETFORGET_VIEW
+        self.addChildViewController(viewController)
+        self.view.addSubview(viewController.view)
+        viewController.view.hidden = true
+        Common.sharedInstance.carsForSaleContr = viewController
+        
+        viewController = self.storyboard?.instantiateViewControllerWithIdentifier("fc_contr") as CommonRightController
+        viewController.view.tag = TAG_FOLLOWED_CARS_VIEW
+        self.addChildViewController(viewController)
+        self.view.addSubview(viewController.view)
+        viewController.view.hidden = true
+        Common.sharedInstance.carsForSaleContr = viewController
         
         viewController = self.storyboard?.instantiateViewControllerWithIdentifier("carsforsale_contr") as CommonRightController
         viewController.view.tag = TAG_CARSFORSALE_VIEW
@@ -198,9 +222,13 @@ class MenuController: UIViewController, UITableViewDelegate {
         switch indexPath.row {
             
         case 1:
-            t = TAG_CARSFORSALE_VIEW
+            t = TAG_CARSFORSALE_SEARCH_VIEW
+        case 2:
+            t = TAG_SETFORGET_VIEW
+        case 3:
+            t = TAG_FOLLOWED_CARS_VIEW
         default:
-            t = TAG_LOGIN_VIEW
+            t = TAG_WELCOME_VIEW
         }
 //               println("---\(t)")
         hideAllExceptTag(t)
@@ -220,13 +248,19 @@ class MenuController: UIViewController, UITableViewDelegate {
         return t
     }
     
-//    func refreshBalance() {
-//        
-//        dispatch_async(dispatch_get_main_queue(), {
-//
-//            self.balance.text = "$" + String(format: "%.2f", Common.sharedInstance.curBalance)
-//        })
-//        println("\(Common.sharedInstance.curBalance)")
-//    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+//        if UIDevice.currentDevice().orientation.isLandscape.boolValue {
+//            println("landscape")
+//        } else {
+//            println("portraight")
+//        }
+        
+//        hideAllExceptTag(TAG_WELCOME_VIEW)
+
+        if Common.sharedInstance.currentTag == 0 {
+            oneFingerSwipeLeft()
+        }
+    }
 }
 

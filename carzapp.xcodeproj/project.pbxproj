@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD0024751AAC312B00A9AD11 /* CFSSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0024741AAC312B00A9AD11 /* CFSSearchController.swift */; };
 		DD549BFA1A87338200EA56D8 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD549BF91A87338200EA56D8 /* LoginController.swift */; };
 		DD549BFC1A8733A600EA56D8 /* CarsForSaleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD549BFB1A8733A600EA56D8 /* CarsForSaleController.swift */; };
 		DD549BFF1A87377D00EA56D8 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD549BFE1A87377C00EA56D8 /* FontAwesome.otf */; };
@@ -26,11 +27,18 @@
 		DD5CB4751A87266B00BBC7DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CB4721A87266B00BBC7DA /* Constants.swift */; };
 		DD5CB4781A8726A500BBC7DA /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CB4761A8726A500BBC7DA /* Common.swift */; };
 		DD5CB4791A8726A500BBC7DA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CB4771A8726A500BBC7DA /* Network.swift */; };
+		DD6C95031AACFC95004D6031 /* CFSSearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C95021AACFC95004D6031 /* CFSSearchDataSource.swift */; };
+		DD6C95051AAD0B20004D6031 /* CFSSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C95041AAD0B20004D6031 /* CFSSearchTableViewCell.swift */; };
+		DD6C95071AAD3BF1004D6031 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C95061AAD3BF1004D6031 /* WelcomeController.swift */; };
+		DD6C95091AAD3D7D004D6031 /* welcome.png in Resources */ = {isa = PBXBuildFile; fileRef = DD6C95081AAD3D7D004D6031 /* welcome.png */; };
 		DD8793061AA35FA000C43C82 /* ic_nophoto_big.png in Resources */ = {isa = PBXBuildFile; fileRef = DD8793051AA35FA000C43C82 /* ic_nophoto_big.png */; };
 		DD90189F1AA3235600296FC9 /* CFSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90189E1AA3235600296FC9 /* CFSTableViewCell.swift */; };
 		DD9430B61A906FED007A304C /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9430B51A906FED007A304C /* LoginTableViewCell.swift */; };
 		DD9430B81A907134007A304C /* LoginDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9430B71A907134007A304C /* LoginDataSource.swift */; };
 		DDA0EB191A908BAC000CEF76 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0EB181A908BAC000CEF76 /* TriangleView.swift */; };
+		DDB9BB041AAD4F5E009A310E /* SetForgetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB9BB031AAD4F5E009A310E /* SetForgetController.swift */; };
+		DDB9BB061AAD4FB1009A310E /* FollowedCarsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB9BB051AAD4FB1009A310E /* FollowedCarsController.swift */; };
+		DDC2D4041AA453420058BE6A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC2D4031AA453420058BE6A /* Crashlytics.framework */; };
 		DDCF56111A9C1E6300B0CE5A /* CFSDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF56101A9C1E6300B0CE5A /* CFSDataSource.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD0024741AAC312B00A9AD11 /* CFSSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFSSearchController.swift; sourceTree = "<group>"; };
 		DD549BF91A87338200EA56D8 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		DD549BFB1A8733A600EA56D8 /* CarsForSaleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarsForSaleController.swift; sourceTree = "<group>"; };
 		DD549BFE1A87377C00EA56D8 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
@@ -68,11 +77,18 @@
 		DD5CB4721A87266B00BBC7DA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DD5CB4761A8726A500BBC7DA /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		DD5CB4771A8726A500BBC7DA /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		DD6C95021AACFC95004D6031 /* CFSSearchDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFSSearchDataSource.swift; sourceTree = "<group>"; };
+		DD6C95041AAD0B20004D6031 /* CFSSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFSSearchTableViewCell.swift; sourceTree = "<group>"; };
+		DD6C95061AAD3BF1004D6031 /* WelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
+		DD6C95081AAD3D7D004D6031 /* welcome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcome.png; sourceTree = "<group>"; };
 		DD8793051AA35FA000C43C82 /* ic_nophoto_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_nophoto_big.png; sourceTree = "<group>"; };
 		DD90189E1AA3235600296FC9 /* CFSTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFSTableViewCell.swift; sourceTree = "<group>"; };
 		DD9430B51A906FED007A304C /* LoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
 		DD9430B71A907134007A304C /* LoginDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDataSource.swift; sourceTree = "<group>"; };
 		DDA0EB181A908BAC000CEF76 /* TriangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
+		DDB9BB031AAD4F5E009A310E /* SetForgetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetForgetController.swift; sourceTree = "<group>"; };
+		DDB9BB051AAD4FB1009A310E /* FollowedCarsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowedCarsController.swift; sourceTree = "<group>"; };
+		DDC2D4031AA453420058BE6A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		DDCF56101A9C1E6300B0CE5A /* CFSDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFSDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC2D4041AA453420058BE6A /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +122,7 @@
 		DD5CB4321A8722EE00BBC7DA = {
 			isa = PBXGroup;
 			children = (
+				DDC2D4031AA453420058BE6A /* Crashlytics.framework */,
 				DD5CB43D1A8722EE00BBC7DA /* carzapp */,
 				DD5CB4561A8722EF00BBC7DA /* carzappTests */,
 				DD5CB43C1A8722EE00BBC7DA /* Products */,
@@ -175,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				DD9430B51A906FED007A304C /* LoginTableViewCell.swift */,
+				DD6C95041AAD0B20004D6031 /* CFSSearchTableViewCell.swift */,
 				DD5CB4471A8722EE00BBC7DA /* Main.storyboard */,
 				DD5CB46E1A87263400BBC7DA /* MenuTableViewCell.swift */,
 				DDA0EB181A908BAC000CEF76 /* TriangleView.swift */,
@@ -190,6 +209,10 @@
 				DD5CB4671A8725C000BBC7DA /* MenuController.swift */,
 				DD549BF91A87338200EA56D8 /* LoginController.swift */,
 				DD549BFB1A8733A600EA56D8 /* CarsForSaleController.swift */,
+				DD0024741AAC312B00A9AD11 /* CFSSearchController.swift */,
+				DD6C95061AAD3BF1004D6031 /* WelcomeController.swift */,
+				DDB9BB031AAD4F5E009A310E /* SetForgetController.swift */,
+				DDB9BB051AAD4FB1009A310E /* FollowedCarsController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -213,6 +236,7 @@
 				DD5CB46C1A87260000BBC7DA /* MenuDataSource.swift */,
 				DD9430B71A907134007A304C /* LoginDataSource.swift */,
 				DDCF56101A9C1E6300B0CE5A /* CFSDataSource.swift */,
+				DD6C95021AACFC95004D6031 /* CFSSearchDataSource.swift */,
 			);
 			name = DS;
 			sourceTree = "<group>";
@@ -221,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				DD8793051AA35FA000C43C82 /* ic_nophoto_big.png */,
+				DD6C95081AAD3D7D004D6031 /* welcome.png */,
 			);
 			name = img;
 			sourceTree = "<group>";
@@ -235,6 +260,7 @@
 				DD5CB4371A8722EE00BBC7DA /* Sources */,
 				DD5CB4381A8722EE00BBC7DA /* Frameworks */,
 				DD5CB4391A8722EE00BBC7DA /* Resources */,
+				DDC2D4021AA4530E0058BE6A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -306,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD6C95091AAD3D7D004D6031 /* welcome.png in Resources */,
 				DD5CB4491A8722EE00BBC7DA /* Main.storyboard in Resources */,
 				DD5CB44E1A8722EE00BBC7DA /* LaunchScreen.xib in Resources */,
 				DD549BFF1A87377D00EA56D8 /* FontAwesome.otf in Resources */,
@@ -323,27 +350,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DDC2D4021AA4530E0058BE6A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 61b97f836813051adca5ca79f27795ff58da96c5 cb21e610491f28b17202b44e90ce49c8b896a6a18bfa739a6f1d93aedfae1078";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DD5CB4371A8722EE00BBC7DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD6C95051AAD0B20004D6031 /* CFSSearchTableViewCell.swift in Sources */,
 				DD5CB4681A8725C000BBC7DA /* MenuController.swift in Sources */,
 				DD5CB4731A87266B00BBC7DA /* Colors.swift in Sources */,
 				DD5CB4791A8726A500BBC7DA /* Network.swift in Sources */,
+				DDB9BB061AAD4FB1009A310E /* FollowedCarsController.swift in Sources */,
 				DD549BFA1A87338200EA56D8 /* LoginController.swift in Sources */,
 				DD9430B81A907134007A304C /* LoginDataSource.swift in Sources */,
 				DD5CB4461A8722EE00BBC7DA /* ViewController.swift in Sources */,
 				DD90189F1AA3235600296FC9 /* CFSTableViewCell.swift in Sources */,
+				DD6C95071AAD3BF1004D6031 /* WelcomeController.swift in Sources */,
 				DDA0EB191A908BAC000CEF76 /* TriangleView.swift in Sources */,
 				DD5CB46F1A87263400BBC7DA /* MenuTableViewCell.swift in Sources */,
+				DDB9BB041AAD4F5E009A310E /* SetForgetController.swift in Sources */,
 				DD5CB4781A8726A500BBC7DA /* Common.swift in Sources */,
 				DD5CB4411A8722EE00BBC7DA /* AppDelegate.swift in Sources */,
 				DD5CB4751A87266B00BBC7DA /* Constants.swift in Sources */,
 				DDCF56111A9C1E6300B0CE5A /* CFSDataSource.swift in Sources */,
 				DD5CB4741A87266B00BBC7DA /* Tags.swift in Sources */,
+				DD0024751AAC312B00A9AD11 /* CFSSearchController.swift in Sources */,
 				DD5CB46D1A87260000BBC7DA /* MenuDataSource.swift in Sources */,
 				DD5CB46A1A8725CA00BBC7DA /* CommonRightController.swift in Sources */,
+				DD6C95031AACFC95004D6031 /* CFSSearchDataSource.swift in Sources */,
 				DD5CB4441A8722EE00BBC7DA /* carzapp.xcdatamodeld in Sources */,
 				DD549BFC1A8733A600EA56D8 /* CarsForSaleController.swift in Sources */,
 				DD9430B61A906FED007A304C /* LoginTableViewCell.swift in Sources */,
@@ -470,6 +519,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = carzapp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -482,6 +535,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = carzapp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

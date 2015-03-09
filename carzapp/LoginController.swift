@@ -22,9 +22,6 @@ class LoginController: CommonRightController, UITableViewDelegate {
     {
         super.viewDidLoad()
         
-//        signButton.backgroundColor = UIColor.redColor()
-//        joinButton.backgroundColor = UIColor.greenColor()
-
         menuButton.titleLabel?.font = UIFont (name: "FontAwesome", size: 19)
         menuButton.setTitle(menuIcon, forState: UIControlState.Normal)
         tableView.delegate = self
@@ -175,5 +172,10 @@ class LoginController: CommonRightController, UITableViewDelegate {
     {
 //        println("touch")
         self.view.endEditing(true)
+    }
+    
+    override func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int)
+    {
+        Common.sharedInstance.menuContr?.hideAllExceptTag(TAG_WELCOME_VIEW)
     }
 }
