@@ -43,13 +43,13 @@ class MenuController: UIViewController, UITableViewDelegate {
         viewController.view.tag = TAG_WELCOME_VIEW;
         self.addChildViewController(viewController)
         self.view.addSubview(viewController.view)
-        viewController.view.hidden = false
+        viewController.view.hidden = needReg
         
         viewController = self.storyboard?.instantiateViewControllerWithIdentifier("login_contr") as CommonRightController
         viewController.view.tag = TAG_LOGIN_VIEW;
         self.addChildViewController(viewController)
         self.view.addSubview(viewController.view)
-        viewController.view.hidden = true //needReg
+        viewController.view.hidden = !needReg
         //        Common.sharedInstance.usersContr = viewController
         
         viewController = self.storyboard?.instantiateViewControllerWithIdentifier("cfs_search_contr") as CommonRightController
@@ -228,7 +228,7 @@ class MenuController: UIViewController, UITableViewDelegate {
         case 3:
             t = TAG_FOLLOWED_CARS_VIEW
         default:
-            t = TAG_WELCOME_VIEW
+            t = TAG_LOGIN_VIEW
         }
 //               println("---\(t)")
         hideAllExceptTag(t)

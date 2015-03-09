@@ -50,6 +50,21 @@ class CFSDataSource: NSObject, UITableViewDataSource {
         let dl1 = (dl == nil ? "" : dl!)
         cell.dealer.text = dl1
         
+        let images = (item["images"] as? NSArray)
+//        println("--- \(images)")
+        if images != nil {
+            var x:CGFloat = 0.0
+            let size = cell.scrollView.frame.size
+            for img in images! {
+                let iview = UIImageView(frame: CGRectMake(x, 0, size.width, size.height))
+                x += size.width
+                let url = NSURL(string: BASE_URL + (img["image_file_name"] as String))
+                iview.sd_setImageWithURL(url, placeholderImage: UIImage(named:"ic_nophoto_big"))
+                cell.scrollView .addSubview(iview)
+            }
+            cell.scrollWidth.constant = x
+        }
+
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.contentView.backgroundColor = UIColor.clearColor()
         cell.backgroundView?.backgroundColor = UIColor.clearColor()

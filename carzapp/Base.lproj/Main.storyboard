@@ -116,12 +116,34 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ic_nophoto_big.png" translatesAutoresizingMaskIntoConstraints="NO" id="p5d-oG-KBK">
-                                                    <rect key="frame" x="0.0" y="18" width="300" height="195"/>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nGE-1d-LET">
+                                                    <rect key="frame" x="0.0" y="18" width="300" height="196"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxB-IQ-bMf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="196"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="300" id="G1z-Ji-p5e"/>
+                                                                <constraint firstAttribute="height" constant="196" id="Vby-OY-fIs"/>
+                                                                <constraint firstAttribute="width" constant="300" id="Xqp-qR-jRM"/>
+                                                                <constraint firstAttribute="height" constant="196" id="ZsR-9R-U2h"/>
+                                                            </constraints>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="Xqp-qR-jRM"/>
+                                                                    <exclude reference="ZsR-9R-U2h"/>
+                                                                </mask>
+                                                            </variation>
+                                                        </view>
+                                                    </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="195" id="uAU-rE-Wqi"/>
+                                                        <constraint firstAttribute="height" constant="196" id="2V7-p8-atT"/>
+                                                        <constraint firstAttribute="bottom" secondItem="bxB-IQ-bMf" secondAttribute="bottom" id="HQm-fa-QTv"/>
+                                                        <constraint firstItem="bxB-IQ-bMf" firstAttribute="top" secondItem="nGE-1d-LET" secondAttribute="top" id="d5c-7E-chk"/>
+                                                        <constraint firstItem="bxB-IQ-bMf" firstAttribute="leading" secondItem="nGE-1d-LET" secondAttribute="leading" id="v6P-9l-9yG"/>
+                                                        <constraint firstAttribute="trailing" secondItem="bxB-IQ-bMf" secondAttribute="trailing" id="va5-fX-ojp"/>
                                                     </constraints>
-                                                </imageView>
+                                                </scrollView>
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="   12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdG-hJ-sah">
                                                     <rect key="frame" x="13" y="180" width="40" height="18"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -327,19 +349,25 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="nGE-1d-LET" firstAttribute="leading" secondItem="rMV-wX-p7E" secondAttribute="leading" id="0Zl-Ap-g44"/>
                                                 <constraint firstAttribute="trailing" secondItem="hij-Vh-h4l" secondAttribute="trailing" id="0kF-uG-K2w"/>
+                                                <constraint firstItem="vdG-hJ-sah" firstAttribute="leading" secondItem="nGE-1d-LET" secondAttribute="leading" constant="13" id="2Ny-id-enn"/>
+                                                <constraint firstItem="hij-Vh-h4l" firstAttribute="top" secondItem="vdG-hJ-sah" secondAttribute="bottom" constant="15" id="31P-Kn-tDE"/>
                                                 <constraint firstAttribute="bottom" secondItem="hij-Vh-h4l" secondAttribute="bottom" constant="9" id="EyL-4h-45i"/>
-                                                <constraint firstItem="hij-Vh-h4l" firstAttribute="top" secondItem="p5d-oG-KBK" secondAttribute="bottom" id="Kvz-gG-WZ6"/>
-                                                <constraint firstItem="vdG-hJ-sah" firstAttribute="top" secondItem="p5d-oG-KBK" secondAttribute="bottom" constant="-33" id="MON-fP-NmG"/>
-                                                <constraint firstItem="p5d-oG-KBK" firstAttribute="leading" secondItem="vdG-hJ-sah" secondAttribute="trailing" constant="-53" id="Pxg-g5-E5B"/>
-                                                <constraint firstAttribute="trailing" secondItem="p5d-oG-KBK" secondAttribute="trailing" id="Wp2-No-pvh"/>
+                                                <constraint firstItem="nGE-1d-LET" firstAttribute="top" secondItem="abR-8d-ykX" secondAttribute="bottom" id="IG3-et-NKv"/>
+                                                <constraint firstAttribute="trailing" secondItem="nGE-1d-LET" secondAttribute="trailing" id="KK1-tG-Ic8"/>
                                                 <constraint firstItem="abR-8d-ykX" firstAttribute="leading" secondItem="rMV-wX-p7E" secondAttribute="leading" id="YsN-T3-eqz"/>
-                                                <constraint firstItem="p5d-oG-KBK" firstAttribute="top" secondItem="abR-8d-ykX" secondAttribute="bottom" id="lwI-eW-vee"/>
+                                                <constraint firstItem="vdG-hJ-sah" firstAttribute="width" secondItem="nGE-1d-LET" secondAttribute="height" multiplier="10:49" id="gGq-lS-Em6"/>
                                                 <constraint firstAttribute="trailing" secondItem="abR-8d-ykX" secondAttribute="trailing" id="pnv-cf-XgC"/>
-                                                <constraint firstItem="p5d-oG-KBK" firstAttribute="leading" secondItem="rMV-wX-p7E" secondAttribute="leading" id="qCv-0Q-Ldm"/>
                                                 <constraint firstItem="abR-8d-ykX" firstAttribute="top" secondItem="rMV-wX-p7E" secondAttribute="top" id="qf7-sQ-PWl"/>
                                                 <constraint firstItem="hij-Vh-h4l" firstAttribute="leading" secondItem="rMV-wX-p7E" secondAttribute="leading" id="sPe-5J-Hho"/>
+                                                <constraint firstItem="vdG-hJ-sah" firstAttribute="bottom" secondItem="nGE-1d-LET" secondAttribute="bottom" constant="-16" id="sZz-Jw-C5U"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="gGq-lS-Em6"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cyls" destination="now-d1-B8M" id="mHl-lQ-mal"/>
@@ -354,6 +382,9 @@
                                             <outlet property="nsw" destination="uCW-Gd-Uzv" id="ABE-xz-hDx"/>
                                             <outlet property="photoLabel" destination="vdG-hJ-sah" id="LgQ-ji-4vo"/>
                                             <outlet property="price" destination="UFf-Gm-Oqj" id="MXb-a4-puA"/>
+                                            <outlet property="scrollHeight" destination="Vby-OY-fIs" id="yYN-eA-s5U"/>
+                                            <outlet property="scrollView" destination="nGE-1d-LET" id="w0X-i3-5g3"/>
+                                            <outlet property="scrollWidth" destination="G1z-Ji-p5e" id="ghb-NV-2ha"/>
                                             <outlet property="sign" destination="8V3-Ty-0Au" id="9pf-D8-g7a"/>
                                             <outlet property="spotlightLabel" destination="abR-8d-ykX" id="ZZM-4Q-qYX"/>
                                             <outlet property="title" destination="MYR-qo-tR7" id="yLX-c9-GI5"/>
@@ -391,7 +422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Lg-Sm-aBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-472" y="1122"/>
+            <point key="canvasLocation" x="-472" y="1156"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="T8b-DH-XIW">
@@ -754,10 +785,10 @@
                                             <action selector="menuClick:" destination="bKg-qG-ahb" eventType="touchUpInside" id="Uuh-Yf-dTf"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1P-Pf-zBN">
-                                        <rect key="frame" x="110" y="32" width="101" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome v.1.3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1P-Pf-zBN">
+                                        <rect key="frame" x="71" y="32" width="180" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="101" id="ECD-Iy-rUj"/>
+                                            <constraint firstAttribute="width" constant="180" id="ECD-Iy-rUj"/>
                                             <constraint firstAttribute="height" constant="21" id="e1Q-BZ-o21"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -1159,7 +1190,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_nophoto_big.png" width="250" height="300"/>
         <image name="welcome.png" width="790" height="819"/>
     </resources>
 </document>

@@ -33,6 +33,10 @@ class CFSTableViewCell: UITableViewCell {
     @IBOutlet weak var dot2: UILabel!
     @IBOutlet weak var dot1: UILabel!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollWidth: NSLayoutConstraint!
+    @IBOutlet weak var scrollHeight: NSLayoutConstraint!
+    
     override func awakeFromNib()
     {
         super.awakeFromNib()
@@ -77,8 +81,18 @@ class CFSTableViewCell: UITableViewCell {
         dealer.textColor = COLOR_CARSFORSALE_CELL_BOTTOM_STRING
         eye_digit.textColor = COLOR_CARSFORSALE_CELL_BOTTOM_STRING
         nsw.textColor = COLOR_CARSFORSALE_CELL_BOTTOM_STRING
-        
 
+        
+//        let block: SDWebImageCompletionBlock! = {(image: UIImage!, error: NSError!, cacheType: SDImageCacheType!, imageURL: NSURL!) -> Void in
+//            println(self)
+//        }
+//
+//        let url = NSURL(string: "http://198.38.86.211:3000/uploads/dealers_network/images/13156_00001359_1.jpg")
+
+//        self.photo.sd_setImageWithURL(url, completed: nil)
+//        self.photo.sd_setImageWithURL(url, placeholderImage: UIImage(named:"ic_nophoto_big"))
+    
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

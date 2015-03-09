@@ -14,6 +14,7 @@ class CarsForSaleController: CommonRightController, UITableViewDelegate {
     @IBOutlet weak var topGreyView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     let dataSource = CFSDataSource()
 
     @IBOutlet weak var spotlightView: UIView!

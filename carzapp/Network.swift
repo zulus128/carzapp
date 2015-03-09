@@ -8,7 +8,8 @@
 
 import UIKit
 
-let URL = "http://198.38.86.211:3000/api/v1/"
+let BASE_URL = "http://198.38.86.211:3000"
+let URL = BASE_URL + "/api/v1/"
 let STR_USER_CREATE = "users/register.json"
 let STR_USER_LOGIN = "users/authorize.json"
 
@@ -142,30 +143,53 @@ class Network: NSObject {
         }
     }
     
-    func registerUser(dict: JSONDictionary, contr:CommonRightController) {
+    func showErr()
+    {
+        let alert = UIAlertView()
+        alert.title = "Error"
+        alert.message = "You need login first"
+        alert.addButtonWithTitle("Ok")
+        alert.show()
+    }
+    
+    func registerUser(dict: JSONDictionary, contr:CommonRightController)
+    {
         
         networkRequestPost(STR_USER_CREATE, params:dict, contr:contr)
     }
     
-    func loginUser(dict: JSONDictionary, contr:CommonRightController) {
+    func loginUser(dict: JSONDictionary, contr:CommonRightController)
+    {
         
         networkRequestPost(STR_USER_LOGIN, params:dict, contr:contr)
     }
     
-    func getCarsForSale(contr:CommonRightController) {
-        
+    func getCarsForSale(contr:CommonRightController)
+    {
+        if token == nil {
+            showErr()
+            return
+        }
         let s = STR_CARSFORASLE_LIST + token!
         networkRequestGet(s, contr:contr)
     }
     
-    func searchForKeyword(kw:String, contr:CommonRightController) {
-        
+    func searchForKeyword(kw:String, contr:CommonRightController)
+    {
+        if token == nil {
+            showErr()
+            return
+        }
         let s = STR_CARSFORASLE_SEARCH_BY_KEYWORD + token! + "&search=" + kw
         networkRequestGet(s, contr:contr)
     }
     
-    func searchForFields(flds:NSDictionary, contr:CommonRightController) {
-        
+    func searchForFields(flds:NSDictionary, contr:CommonRightController)
+    {
+        if token == nil {
+            showErr()
+            return
+        }
         let keys = flds.allKeys
         var s = STR_CARSFORASLE_SEARCH_BY_FIELDS + token! + "&search[q]="
         for key in keys {
@@ -174,5 +198,6 @@ class Network: NSObject {
         }
         networkRequestGet(s, contr:contr)
     }
+    
     
 }
