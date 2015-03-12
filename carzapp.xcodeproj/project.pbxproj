@@ -36,6 +36,7 @@
 		DD9430B61A906FED007A304C /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9430B51A906FED007A304C /* LoginTableViewCell.swift */; };
 		DD9430B81A907134007A304C /* LoginDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9430B71A907134007A304C /* LoginDataSource.swift */; };
 		DDA0EB191A908BAC000CEF76 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0EB181A908BAC000CEF76 /* TriangleView.swift */; };
+		DDA25F191AB1F7220085B7D2 /* CFSSearchIdsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA25F181AB1F7220085B7D2 /* CFSSearchIdsController.swift */; };
 		DDB9BB041AAD4F5E009A310E /* SetForgetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB9BB031AAD4F5E009A310E /* SetForgetController.swift */; };
 		DDB9BB061AAD4FB1009A310E /* FollowedCarsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB9BB051AAD4FB1009A310E /* FollowedCarsController.swift */; };
 		DDC2D4041AA453420058BE6A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC2D4031AA453420058BE6A /* Crashlytics.framework */; };
@@ -89,6 +90,7 @@
 		DD9430B71A907134007A304C /* LoginDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDataSource.swift; sourceTree = "<group>"; };
 		DD9C175E1AADF64700C9918C /* SDWebImage-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-Bridging-Header.h"; sourceTree = "<group>"; };
 		DDA0EB181A908BAC000CEF76 /* TriangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
+		DDA25F181AB1F7220085B7D2 /* CFSSearchIdsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFSSearchIdsController.swift; sourceTree = "<group>"; };
 		DDB9BB031AAD4F5E009A310E /* SetForgetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetForgetController.swift; sourceTree = "<group>"; };
 		DDB9BB051AAD4FB1009A310E /* FollowedCarsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowedCarsController.swift; sourceTree = "<group>"; };
 		DDC2D4031AA453420058BE6A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				DD6C95061AAD3BF1004D6031 /* WelcomeController.swift */,
 				DDB9BB031AAD4F5E009A310E /* SetForgetController.swift */,
 				DDB9BB051AAD4FB1009A310E /* FollowedCarsController.swift */,
+				DDA25F181AB1F7220085B7D2 /* CFSSearchIdsController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				DDB9BB041AAD4F5E009A310E /* SetForgetController.swift in Sources */,
 				DD5CB4781A8726A500BBC7DA /* Common.swift in Sources */,
 				DD5CB4411A8722EE00BBC7DA /* AppDelegate.swift in Sources */,
+				DDA25F191AB1F7220085B7D2 /* CFSSearchIdsController.swift in Sources */,
 				DD5CB4751A87266B00BBC7DA /* Constants.swift in Sources */,
 				DDCF56111A9C1E6300B0CE5A /* CFSDataSource.swift in Sources */,
 				DD5CB4741A87266B00BBC7DA /* Tags.swift in Sources */,
@@ -573,6 +577,7 @@
 			baseConfigurationReference = B2DD1F179A845FD051371BCD /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -591,6 +596,7 @@
 			baseConfigurationReference = 64A1E2528B032F23226A352C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

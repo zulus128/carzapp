@@ -24,6 +24,7 @@ class Common {
 
     var network: Network?
     var carsForSaleContr:CommonRightController?
+    var carsForSaleSearchContr:CFSSearchController?
     var menuContr:MenuController?
     var push_token:String?
     var phone:String?

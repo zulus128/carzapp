@@ -57,21 +57,21 @@ class MenuController: UIViewController, UITableViewDelegate {
         self.addChildViewController(viewController)
         self.view.addSubview(viewController.view)
         viewController.view.hidden = true
-        Common.sharedInstance.carsForSaleContr = viewController
+        Common.sharedInstance.carsForSaleSearchContr = viewController as? CFSSearchController
         
         viewController = self.storyboard?.instantiateViewControllerWithIdentifier("sf_contr") as CommonRightController
         viewController.view.tag = TAG_SETFORGET_VIEW
         self.addChildViewController(viewController)
         self.view.addSubview(viewController.view)
         viewController.view.hidden = true
-        Common.sharedInstance.carsForSaleContr = viewController
+//        Common.sharedInstance.carsForSaleContr = viewController
         
         viewController = self.storyboard?.instantiateViewControllerWithIdentifier("fc_contr") as CommonRightController
         viewController.view.tag = TAG_FOLLOWED_CARS_VIEW
         self.addChildViewController(viewController)
         self.view.addSubview(viewController.view)
         viewController.view.hidden = true
-        Common.sharedInstance.carsForSaleContr = viewController
+//        Common.sharedInstance.carsForSaleContr = viewController
         
         viewController = self.storyboard?.instantiateViewControllerWithIdentifier("carsforsale_contr") as CommonRightController
         viewController.view.tag = TAG_CARSFORSALE_VIEW

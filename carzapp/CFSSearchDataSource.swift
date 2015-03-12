@@ -99,11 +99,18 @@ class CFSSearchDataSource: NSObject, UITableViewDataSource  {
             (cell as CFSSearchTableViewCell).nameLabel.text = str
             (cell as CFSSearchTableViewCell).textVal.text = preValues[indexPath.row]
             (cell as CFSSearchTableViewCell).table = tableView
+            (cell as CFSSearchTableViewCell).setPicker(indexPath.row)
+
         }
         
-        cell.layoutMargins = UIEdgeInsetsZero
-        cell.preservesSuperviewLayoutMargins = false
+//        cell.layoutMargins = UIEdgeInsetsZero
+//        cell.preservesSuperviewLayoutMargins = false
+        if cell.respondsToSelector("setLayoutMargins:") {
+            cell.layoutMargins = UIEdgeInsetsZero;
+        }
+
         cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
         
         return cell
     }

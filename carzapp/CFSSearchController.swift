@@ -43,16 +43,24 @@ let serverSearchOptions = [
     "DriveType"
 ]
 
-class CFSSearchController: CommonRightController, UITableViewDelegate {
+var idsCFSSearchDictionary:NSDictionary?
+
+let PICKER_HEIGHT:CGFloat = 180
+let BOTTOM_VIEW_HEIGHT:CGFloat = 58
+
+class CFSSearchController: CommonRightController, UITableViewDelegate, UIPickerViewDelegate {
    
     @IBOutlet weak var but1: UIButton!
     @IBOutlet weak var but2: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var triangle1: TriangleView!
     @IBOutlet weak var triangle2: TriangleView!
+    @IBOutlet weak var bottomViewHeight: NSLayoutConstraint!
 
     let dataSource = CFSSearchDataSource()
 
+    let idsContr = CFSSearchIdsController()
+    
     @IBAction func firstClicked(sender: AnyObject) {
         
         but1.backgroundColor = COLOR_LOGIN_BUTTONS
@@ -97,6 +105,13 @@ class CFSSearchController: CommonRightController, UITableViewDelegate {
         self.firstClicked(but1)
 
         tableView.separatorColor = COLOR_CARSFORSALE_SEARCH_CELL_SEPARATOR
+
+        if tableView.respondsToSelector("setSeparatorInset:") {
+            tableView.separatorInset = UIEdgeInsetsZero;
+        }
+        if tableView.respondsToSelector("setLayoutMargins:") {
+            tableView.layoutMargins = UIEdgeInsetsZero;
+        }
         
         refresh()
     }
@@ -181,9 +196,19 @@ class CFSSearchController: CommonRightController, UITableViewDelegate {
         if(Common.sharedInstance.network?.token != nil) {
             
 //            Common.sharedInstance.network?.getCarsForSale(self)
+            Common.sharedInstance.network?.getIdsForSearch(idsContr)
+
         }
     }
 
+    func addPickers(dict:NSDictionary)
+    {
+        idsCFSSearchDictionary = dict
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tableView.reloadData()
+        })
+    }
+    
     @IBAction func done(sender: AnyObject) {
         
         if preValues[0] != "" {
@@ -203,5 +228,4 @@ class CFSSearchController: CommonRightController, UITableViewDelegate {
         }
         Common.sharedInstance.network?.searchForFields(dict, contr: self)
     }
-
 }

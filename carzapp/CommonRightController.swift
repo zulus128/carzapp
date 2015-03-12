@@ -158,6 +158,8 @@ class CommonRightController: UIViewController, UIAlertViewDelegate {
                 userDefaults.synchronize()
                 
                 println("Access token \(Common.sharedInstance.network?.token!) stored.")
+                
+                Common.sharedInstance.carsForSaleSearchContr?.refresh()
             }
             
             b = true

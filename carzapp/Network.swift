@@ -16,6 +16,7 @@ let STR_USER_LOGIN = "users/authorize.json"
 let STR_CARSFORASLE_LIST = "cars?access_token="
 let STR_CARSFORASLE_SEARCH_BY_KEYWORD = "cars/search?access_token="
 let STR_CARSFORASLE_SEARCH_BY_FIELDS = "cars/search_by_fields?access_token="
+let STR_CARSFORASLE_SEARCH_UNIQUE_IDS = "cars/unique.json?access_token="
 
 
 //let debug = false
@@ -171,6 +172,16 @@ class Network: NSObject {
             return
         }
         let s = STR_CARSFORASLE_LIST + token!
+        networkRequestGet(s, contr:contr)
+    }
+    
+    func getIdsForSearch(contr:CommonRightController)
+    {
+        if token == nil {
+            showErr()
+            return
+        }
+        let s = STR_CARSFORASLE_SEARCH_UNIQUE_IDS + token!
         networkRequestGet(s, contr:contr)
     }
     

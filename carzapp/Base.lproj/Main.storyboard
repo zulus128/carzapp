@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0wl-Ot-RW3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0wl-Ot-RW3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -785,7 +785,7 @@
                                             <action selector="menuClick:" destination="bKg-qG-ahb" eventType="touchUpInside" id="Uuh-Yf-dTf"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome v.1.3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1P-Pf-zBN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome v.1.4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1P-Pf-zBN">
                                         <rect key="frame" x="71" y="32" width="180" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="180" id="ECD-Iy-rUj"/>
@@ -1010,6 +1010,7 @@
                             <constraint firstItem="Pmn-qM-gA5" firstAttribute="width" secondItem="OFs-bS-vLf" secondAttribute="width" multiplier="0.5" id="0BW-El-ZUi"/>
                             <constraint firstItem="ofj-qV-Pfk" firstAttribute="top" secondItem="yN1-AG-0zx" secondAttribute="bottom" id="458-nx-olB"/>
                             <constraint firstItem="yN1-AG-0zx" firstAttribute="leading" secondItem="OFs-bS-vLf" secondAttribute="leading" id="9bf-hu-N6D"/>
+                            <constraint firstItem="yN1-AG-0zx" firstAttribute="top" secondItem="mxi-vG-5OX" secondAttribute="bottom" id="CMj-t6-vfb"/>
                             <constraint firstItem="Pmn-qM-gA5" firstAttribute="centerX" secondItem="D3t-ul-4Of" secondAttribute="centerX" id="GWU-Oc-AXh"/>
                             <constraint firstItem="f2v-yV-K3u" firstAttribute="centerX" secondItem="WpD-Tr-Esk" secondAttribute="centerX" id="JJv-Wu-ycl"/>
                             <constraint firstItem="D3t-ul-4Of" firstAttribute="top" secondItem="Pmn-qM-gA5" secondAttribute="bottom" id="NUC-xH-RxO"/>
@@ -1034,11 +1035,13 @@
                             <mask key="constraints">
                                 <exclude reference="yDz-vb-oKJ"/>
                                 <exclude reference="Ol2-eC-Btw"/>
+                                <exclude reference="cpm-R8-7Y2"/>
                             </mask>
                         </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="bottomViewHeight" destination="z2e-Hy-Lff" id="lpD-UF-unr"/>
                         <outlet property="but1" destination="f2v-yV-K3u" id="tcb-8L-Pel"/>
                         <outlet property="but2" destination="Pmn-qM-gA5" id="AmJ-Sa-Qna"/>
                         <outlet property="menuButton" destination="LIJ-9r-kMO" id="cIR-42-FLp"/>
@@ -1049,7 +1052,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Yc-ej-1zS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-472" y="1729"/>
+            <point key="canvasLocation" x="-472" y="1731"/>
         </scene>
         <!--Set Forget Controller-->
         <scene sceneID="taX-JU-7v8">
