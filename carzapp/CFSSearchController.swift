@@ -203,6 +203,7 @@ class CFSSearchController: CommonRightController, UITableViewDelegate, UIPickerV
 
     func addPickers(dict:NSDictionary)
     {
+        println("=== \(dict)");
         idsCFSSearchDictionary = dict
         dispatch_async(dispatch_get_main_queue(), {
             self.tableView.reloadData()

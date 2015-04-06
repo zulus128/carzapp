@@ -8,41 +8,6 @@
 
 import UIKit
 
-//let searchOptions = [
-//    "Keywords",
-//    "-",
-//    "Make",
-//    "Group",
-//    "Model",
-//    "-",
-//    "Location",
-//    "Postcode",
-//    "Ad Type",
-//    "Certified / Approved",
-//    "Only Show Cars With",
-//    "Body Type",
-//    "Price",
-//    "Year",
-//    "Transmission",
-//    "Kilometres",
-//    "Colour",
-//    "Fuel Type",
-//    "Fuel Economy",
-//    "Drive Type",
-//    "LifeStyle",
-//    "Seats",
-//    "Doors",
-//    "Engine Size (CCs)",
-//    "Cylinders",
-//    "Engine Type",
-//    "Induction / Turbo",
-//    "Power (kW)",
-//    "Towing (Braked)",
-//    "ANCAP Safety Rating",
-//    "Green Star Rating",
-//    "P Plate Approved"
-//]
-
 let searchOptions = [
     "Keyword",
     "-",
