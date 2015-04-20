@@ -11,7 +11,7 @@ import UIKit
 class CFSSearchTableViewCell: UITableViewCell, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIGestureRecognizerDelegate {
    
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var textVal: UITextField!
+//    @IBOutlet weak var textVal: UITextField!
     
     weak var table:UITableView!
     var picker:UIPickerView?
@@ -77,7 +77,7 @@ class CFSSearchTableViewCell: UITableViewCell, UITextFieldDelegate, UIPickerView
     {
 //        let name = serverSearchOptions[index]
         if(idsCFSSearchDictionary == nil) {
-            textVal.inputView = nil
+//            textVal.inputView = nil
             return
         }
 
@@ -85,7 +85,7 @@ class CFSSearchTableViewCell: UITableViewCell, UITextFieldDelegate, UIPickerView
 //        let arr = msg[name] as? NSArray
         let arr = idsCFSSearchDictionary!["message"] as? NSArray
         if(arr == nil) {
-            textVal.inputView = nil
+//            textVal.inputView = nil
             return
         }
 
@@ -94,7 +94,7 @@ class CFSSearchTableViewCell: UITableViewCell, UITextFieldDelegate, UIPickerView
         picker = UIPickerView()
         picker?.delegate = self
         picker?.dataSource = self
-        textVal.inputView = picker!
+//        textVal.inputView = picker!
         picker?.reloadAllComponents()
         
         let pickerTap = UITapGestureRecognizer(target: self, action:"pickerViewTapGestureRecognized:")
@@ -147,7 +147,7 @@ class CFSSearchTableViewCell: UITableViewCell, UITextFieldDelegate, UIPickerView
             let s1 = (s == nil ? "-//-" : s!)
             str += (str == "" ? s1 : ", " + s1)
         }
-        textVal.text = str
+//        textVal.text = str
     }
     
     func selectPick1(row:Int)

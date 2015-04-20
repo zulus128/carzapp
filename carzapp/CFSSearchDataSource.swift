@@ -62,7 +62,7 @@ class CFSSearchDataSource: NSObject, UITableViewDataSource  {
             }
             cell = tableView.dequeueReusableCellWithIdentifier("cfs_search_option", forIndexPath: indexPath) as CFSSearchTableViewCell
             (cell as CFSSearchTableViewCell).nameLabel.text = str
-            (cell as CFSSearchTableViewCell).textVal.text = preValues[indexPath.row]
+//            (cell as CFSSearchTableViewCell).textVal.text = preValues[indexPath.row]
             (cell as CFSSearchTableViewCell).table = tableView
             (cell as CFSSearchTableViewCell).setPicker(indexPath.row)
 
