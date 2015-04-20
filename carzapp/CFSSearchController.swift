@@ -9,6 +9,7 @@
 import UIKit
 
 var searchResult:NSDictionary = [:]
+var activeTextField:UITextField?
 
 let serverSearchOptions = [
     "-",
@@ -113,9 +114,17 @@ class CFSSearchController: CommonRightController, UITableViewDelegate, UIPickerV
             tableView.layoutMargins = UIEdgeInsetsZero;
         }
         
+        let pickerTap = UITapGestureRecognizer(target: self, action:"pickerViewTapGestureRecognized:")
+        tableView.addGestureRecognizer(pickerTap)
+        
         refresh()
     }
 
+    func pickerViewTapGestureRecognized(recognizer : UIRotationGestureRecognizer)
+    {
+        activeTextField?.resignFirstResponder()
+    }
+    
     override func viewWillDisappear(animated: Bool) {
         
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)

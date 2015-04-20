@@ -126,6 +126,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DD1F442D1AE4C72000376F8C /* CFSSearch */ = {
+			isa = PBXGroup;
+			children = (
+				DD0024741AAC312B00A9AD11 /* CFSSearchController.swift */,
+			);
+			name = CFSSearch;
+			sourceTree = "<group>";
+		};
 		DD549BFD1A87377000EA56D8 /* FONT */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,11 +230,11 @@
 		DD5CB4651A87246B00BBC7DA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DD1F442D1AE4C72000376F8C /* CFSSearch */,
 				DD5CB4691A8725CA00BBC7DA /* CommonRightController.swift */,
 				DD5CB4671A8725C000BBC7DA /* MenuController.swift */,
 				DD549BF91A87338200EA56D8 /* LoginController.swift */,
 				DD549BFB1A8733A600EA56D8 /* CarsForSaleController.swift */,
-				DD0024741AAC312B00A9AD11 /* CFSSearchController.swift */,
 				DD6C95061AAD3BF1004D6031 /* WelcomeController.swift */,
 				DDB9BB031AAD4F5E009A310E /* SetForgetController.swift */,
 				DDB9BB051AAD4FB1009A310E /* FollowedCarsController.swift */,
